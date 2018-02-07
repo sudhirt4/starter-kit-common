@@ -14,3 +14,7 @@ export function validate(data, schema, options = {}) {
     return Promise.resolve(null);
   });
 }
+
+export default {
+  validate
+};

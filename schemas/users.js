@@ -17,3 +17,7 @@ export const USER_SCHEMA = {
 export const create = {
   user: USER_SCHEMA
 };
+
+export default {
+  create
+};

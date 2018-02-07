@@ -12,3 +12,7 @@ export function normalizeErrors(joiErrs) {
 
   return errors;
 }
+
+export default {
+  normalizeErrors
+};

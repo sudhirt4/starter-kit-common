@@ -12,3 +12,7 @@ export const login = {
     x: Joi.string().required()
   })
 };
+
+export default {
+  login
+};
