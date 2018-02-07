@@ -1,10 +1,7 @@
-import Joi from 'joi';
+import * as Joi from "joi";
 
 export function validate(data, schema, options = {}) {
-  options = {
-    ...options,
-    abortEarly: false
-  };
+  options.abortEarly = false;
 
   return Joi.validate(data, schema, options, err => {
     if (err) {
