@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi from "joi";
 
 export const USER_SCHEMA = {
   firstName: Joi.string()
@@ -11,7 +11,8 @@ export const USER_SCHEMA = {
     .email()
     .max(50)
     .required(),
-  password: Joi.required()
+  password: Joi.required(),
+  confirmPassword: Joi.required()
 };
 
 export const create = {

@@ -1,17 +1,26 @@
 import * as Joi from "joi";
+import JoiValidationUtils from "./joiValidation";
 
 export function validate(data, schema, options = {}) {
   options.abortEarly = false;
 
-  return Joi.validate(data, schema, options, err => {
-    if (err) {
-      return Promise.reject(err);
-    }
+  let { error, value } = Joi.validate(data, schema, options);
+  if (error) {
+    throw error;
+  }
+  return value;
+}
 
-    return Promise.resolve(null);
-  });
+export function getValidationErrors(data, schema, options = {}) {
+  try {
+    validate(data, schema, options);
+  } catch (err) {
+    return JoiValidationUtils.normalizeErrors(err);
+  }
+  return {};
 }
 
 export default {
-  validate
+  validate,
+  getValidationErrors
 };
