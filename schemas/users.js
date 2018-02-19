@@ -16,7 +16,7 @@ export const USER_SCHEMA = {
 };
 
 export const create = {
-  user: USER_SCHEMA
+  user: Joi.object(USER_SCHEMA).required()
 };
 
 export default {

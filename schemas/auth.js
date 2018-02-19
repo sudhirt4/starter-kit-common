@@ -7,10 +7,7 @@ export const login = {
       .max(50)
       .required(),
     password: Joi.required()
-  }).required(),
-  test: Joi.array().items({
-    x: Joi.string().required()
-  })
+  }).required()
 };
 
 export default {
