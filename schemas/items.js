@@ -6,6 +6,9 @@ export const ITEM_SCHEMA = {
     .required(),
   description: Joi.string()
     .max(100)
+    .required(),
+  tags: Joi.array()
+    .min(1)
     .required()
 };
 
