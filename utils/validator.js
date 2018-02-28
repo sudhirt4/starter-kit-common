@@ -8,7 +8,7 @@ export function validate(data, schema, options = {}) {
   if (error) {
     throw error;
   }
-  
+
   return value;
 }
 
@@ -18,7 +18,7 @@ export function getValidationErrors(data, schema, options = {}) {
   } catch (err) {
     return JoiValidationUtils.normalizeErrors(err);
   }
-  
+
   return {};
 }
 
